@@ -35,7 +35,7 @@ app.get("/", (req, res, next) => {
 // ====================================
 // Crear un nuevo usuario
 // ====================================
-app.post("/", middleware.validar_token, (req, res) => {
+app.post("/", (req, res) => {
   const body = req.body;
 
   //creando una referencia del tipo suaurio

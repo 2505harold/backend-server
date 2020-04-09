@@ -93,8 +93,9 @@ function subirPorTipo(tipo, id, nombreArchivo, res) {
         }
         //si exite archivo eliminalo
         if (fs.existsSync(pathViejo)) {
-          fs.unlink(pathViejo);
+          fs.unlinkSync(pathViejo);
         }
+
         usuario.img = nombreArchivo;
         usuario.save((err, usuarioActualizado) => {
           if (err) {

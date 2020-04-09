@@ -5,6 +5,15 @@ var mongoose = require("mongoose");
 //Inicialzar variables
 const app = express();
 app.set("port", process.env.PORT || "3000");
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  res.header("Access-Control-Allow-Methods", "PUT,POST,DELETE,GET");
+  next();
+});
 
 //importar rutas
 const appRoutes = require("./routes/app");
